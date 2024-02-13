@@ -42,3 +42,21 @@ git restore --staged file_name
 ```bash
 git checkout -- file_name
 ```
+
+### 远程仓库的使用
+
+`git remote -v`: 显示远程仓库的基本信息和 url
+
+`git remote add <shortname> <url>`: 添加一个新的远程仓库
+
+`git fetch fake`: 从远程仓库 fake 中拉取内容
+
+运行 `git pull` 通常会从最初克隆的服务器上抓取数据并自动尝试合并到当前所在的分支
+
+`git push <remote> <branch>`: 推送到指定远程仓库的指定分支
+
+`git remote show origin`: 查看远程仓库的详细信息
+
+`git remote rename <old_name> <new_name>`: 修改一个远程仓库的简写名
+
+`git remote remove/rm <remote>`: 移除一个远程仓库
