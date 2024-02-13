@@ -60,3 +60,26 @@ git checkout -- file_name
 `git remote rename <old_name> <new_name>`: 修改一个远程仓库的简写名
 
 `git remote remove/rm <remote>`: 移除一个远程仓库
+
+### 打标签
+
+Git 支持两种标签：轻量标签（lightweight）与附注标签（annotated）
+
+- 轻量标签很像一个不会改变的分支——它只是某个特定提交的引用
+- 附注标签则包含一些信息：通过添加 `-a` 指令指名是附注标签，`-m` 指令添加备注
+
+`git tag`: 列出已打标签
+`git tag -a v1.0.0 -m "打标签 v1.0.0"`: 添加一个附注标签
+`git show <tag_name>`: 显示一个标签的详情
+`git push <remote> <tag_name>`: 在创建完标签后，必须显示推送标签到远程仓库上
+`git push <remote> --tags`: 推送所有标签到远程仓库上
+`git tag -d <tag_name>`: 删除本地标签，但不会删除远程仓库的标签
+`git push <remote> :refs/tags/<tag_name>`: 删除本地标签后，同步到远程仓库
+`git push origin --delete <tag_name>`: 同上
+`git checkout <tag_name>`: 查看某标签的快照
+`git checkout -b <branch_name> <tag_name>`: 对某个 tag 创建一个新分支，并修改内容
+
+### 命令别名
+
+- `git config --global alias.co checkout`
+- `git config --global alias.unstage 'reset HEAD --'`
